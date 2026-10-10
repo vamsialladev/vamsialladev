@@ -1,0 +1,3 @@
+# Secrets never belong in this repo
+.env
+.streamlit/secrets.toml
