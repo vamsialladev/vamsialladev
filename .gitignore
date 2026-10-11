@@ -1,3 +1,6 @@
 # Secrets never belong in this repo
 .env
 .streamlit/secrets.toml
+
+# Private brand notes, drafts and photos (kept outside the repos; never commit)
+brand-content/
