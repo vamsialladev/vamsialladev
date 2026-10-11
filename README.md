@@ -1,6 +1,10 @@
 ### Hi, I'm Vamsi Alla 👋
 
-I build AI systems for **hospitality operations**, and I take them from the business problem to a deployed, measured, documented system. I'm working toward **Forward Deployed Engineer** roles: working directly with customers to turn messy, real-world problems into AI that works.
+**Senior Software Engineer** · Building production AI systems (LLM, RAG, agents)
+
+12+ years building production software and 3+ years designing, evaluating and deploying LLM and agentic AI applications. I work directly with customers to find the real problem, then own the solution from architecture to evaluation, deployment and handoff.
+
+Open to Forward Deployed Engineer and senior AI engineering roles · Remote, USA
 
 🌐 [Portfolio](https://vamsialla.com) · 💼 [LinkedIn](https://www.linkedin.com/in/vamsi-alla/) · ✉️ vamsialla.dev@gmail.com
 
