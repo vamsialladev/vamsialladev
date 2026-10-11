@@ -2,15 +2,15 @@
 
 I build AI systems for **hospitality operations**, and I take them from the business problem to a deployed, measured, documented system. I'm working toward **Forward Deployed Engineer** roles: working directly with customers to turn messy, real-world problems into AI that works.
 
-🌐 [Portfolio](https://vamsialladev.github.io) · 💼 [LinkedIn](https://www.linkedin.com/in/vamsi-alla/) · ✉️ vamsialla.dev@gmail.com
+🌐 [Portfolio](https://vamsialla.com) · 💼 [LinkedIn](https://www.linkedin.com/in/vamsi-alla/) · ✉️ vamsialla.dev@gmail.com
 
 ---
 
 #### 🛎️ Featured: [Hotel Operations Knowledge Assistant](https://github.com/vamsialladev/hotel-ops-assistant)
 
-<a href="https://vamsialladev.github.io/projects/hotel-ops-assistant.html#demo"><img src="https://raw.githubusercontent.com/vamsialladev/hotel-ops-assistant/main/docs/images/demo.gif" alt="The live Hotel Operations Knowledge Assistant: a front-desk agent clicks a suggested question about dogs at Beach Resort and a cited answer streams in with its source" width="640"></a>
+<a href="https://vamsialla.com/projects/hotel-ops-assistant.html#demo"><img src="https://raw.githubusercontent.com/vamsialladev/hotel-ops-assistant/main/docs/images/demo.gif" alt="The live Hotel Operations Knowledge Assistant: a front-desk agent clicks a suggested question about dogs at Beach Resort and a cited answer streams in with its source" width="640"></a>
 
-**[▶ Watch the 2-minute demo (with narration)](https://vamsialladev.github.io/projects/hotel-ops-assistant.html#demo)** · **[Try the live app](https://hotel-ops-assistant.streamlit.app)** (no sign-in)
+**[▶ Watch the 2-minute demo (with narration)](https://vamsialla.com/projects/hotel-ops-assistant.html#demo)** · **[Try the live app](https://hotel-ops-assistant.streamlit.app)** (no sign-in)
 
 A simulated client engagement with synthetic hotel documents. Front-desk staff ask policy questions in plain English and get short, streamed answers with the source for every fact, for the right hotel. It refuses when the documents don't say, corrects wrong facts in the question, and points to a manager for refunds and safety.
 
@@ -20,7 +20,7 @@ A simulated client engagement with synthetic hotel documents. Front-desk staff a
 - **Production habits:** 274 tests, 97% coverage, CI with a dependency audit and eval gates, Docker, threat model, 49 recorded decisions
 - **Business case:** projected value with pessimistic, base and optimistic scenarios (about $32K/yr base for 2 hotels), plus a pilot plan with go / no-go KPIs
 
-[Live demo](https://hotel-ops-assistant.streamlit.app) · [2-minute video](https://vamsialladev.github.io/projects/hotel-ops-assistant.html#demo) · [Case study](https://vamsialladev.github.io/projects/hotel-ops-assistant.html) · [Code](https://github.com/vamsialladev/hotel-ops-assistant)
+[Live demo](https://hotel-ops-assistant.streamlit.app) · [2-minute video](https://vamsialla.com/projects/hotel-ops-assistant.html#demo) · [Case study](https://vamsialla.com/projects/hotel-ops-assistant.html) · [Code](https://github.com/vamsialladev/hotel-ops-assistant)
 
 #### 🔨 In progress
 **Guest Request Agent:** reads guest emails, checks bookings and policy, drafts replies, and waits for staff approval before anything is sent.
