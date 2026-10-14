@@ -21,7 +21,7 @@ Stage 2 of the same simulated hotel engagement, with synthetic guests and bookin
 - **Gated in CI:** 100% escalation recall, 100% prompt-injection resistance and zero forbidden promises over 40 labelled emails × 3 runs, plus 100% on a held-out set; **$1.30 per 1,000 emails**, 8.4 s p95
 - **Measured honestly:** eight gate failures were bugs in my own checks, each fixed with a regression test; the escalation rules missed both held-out escalations and the model caught them
 - **Built to be safe by construction:** tools can only read or propose, the booking lookup is scoped to the sender, every fact is checked against tool results
-- **Production habits:** 236 tests, 98% coverage, recorded eval runs re-scored in CI, owner admin page with a full request log, 17 recorded decisions
+- **Production habits:** 237 tests, 98% coverage, recorded eval runs re-scored in CI, owner admin page with a full request log, 17 recorded decisions
 
 [Live demo](https://guest-request-agent.streamlit.app) · [2-minute video](https://vamsialla.com/projects/guest-request-agent.html#demo) · [Case study](https://vamsialla.com/projects/guest-request-agent.html) · [Code](https://github.com/vamsialladev/guest-request-agent)
 
