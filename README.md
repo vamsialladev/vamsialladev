@@ -10,7 +10,22 @@ Open to Forward Deployed Engineer and senior AI engineering roles · Remote, USA
 
 ---
 
-#### ✉️ New: [Guest Request Agent](https://github.com/vamsialladev/guest-request-agent)
+#### 📏 New: [Eval Harness](https://github.com/vamsialladev/eval-harness)
+
+<a href="https://vamsialla.com/projects/eval-harness.html#demo"><img src="https://raw.githubusercontent.com/vamsialladev/eval-harness/main/docs/images/demo.gif" alt="The live Eval Harness dashboard: the regression demo run filtered to failing cases, and question q13 drilled down to its expected passage, three refused answers and failed verdicts" width="640"></a>
+
+**[▶ Watch the demo (with narration)](https://vamsialla.com/projects/eval-harness.html#demo)** · **[Open the live dashboard](https://eval-harness.streamlit.app)** (read-only, no API calls)
+
+Stage 3 of the same simulated hotel engagement. One evaluation system for both assistants below: one case schema, each project's own metrics, honest intervals and regression gates in both repos' CI, so a prompt, model or retrieval change can't lower quality without a red check.
+
+- **Caught a real regression:** a "send 2 passages instead of 5" change kept retrieval inside its confidence interval (98% → 93%), but the gate failed because q13 and q35 always passed and now always failed
+- **Judge calibrated honestly:** an LLM judge agreed with my 40 hand labels 95% of the time, but Cohen's kappa was **0.00** (my labels held no failures), so no judge score is trusted or gated
+- **Reproduces published numbers:** the harness re-scores both projects' recordings to their exact published results, and fresh re-runs at pinned commits pass every gate
+- **Production habits:** 181 labelled cases, 86 tests, 93% coverage, every saved report re-scored in CI, 19 recorded decisions, **$0.38** total API spend
+
+[Live dashboard](https://eval-harness.streamlit.app) · [Demo video](https://vamsialla.com/projects/eval-harness.html#demo) · [Case study](https://vamsialla.com/projects/eval-harness.html) · [Code](https://github.com/vamsialladev/eval-harness)
+
+#### ✉️ Featured: [Guest Request Agent](https://github.com/vamsialladev/guest-request-agent)
 
 <a href="https://vamsialla.com/projects/guest-request-agent.html#demo"><img src="https://vamsialla.com/assets/img/guest-agent-still.jpg" alt="The live Guest Request Agent's step timeline for a guest email: booking found, three hotel policies searched and cited, two staff tasks proposed, checks passed" width="640"></a>
 
@@ -42,10 +57,10 @@ A simulated client engagement with synthetic hotel documents. Front-desk staff a
 [Live demo](https://hotel-ops-assistant.streamlit.app) · [2-minute video](https://vamsialla.com/projects/hotel-ops-assistant.html#demo) · [Case study](https://vamsialla.com/projects/hotel-ops-assistant.html) · [Code](https://github.com/vamsialladev/hotel-ops-assistant)
 
 #### 🔨 In progress
-**Eval Harness** (stage 3 of 5): 100+ cases, an LLM judge calibrated against human labels, and regression gates.
+**Production Deployment** (stage 4 of 5): run history, monitoring, sign-in and personal-data redaction for the assistants.
 
 #### 🧰 Tools I work with
-Python · Claude API (tool use) · Pydantic · RAG (BM25 + embeddings) · Evaluation · Streamlit · pytest · Playwright · GitHub Actions · Docker
+Python · Claude API (tool use) · Pydantic · RAG (BM25 + embeddings) · Evaluation (LLM-as-judge, Cohen's kappa, Wilson intervals) · Streamlit · pytest · Playwright · GitHub Actions · Docker
 
 #### 🧭 How I work
 **Understand** the problem and what it costs → **build** with the data as it really is → **measure** with evals → **deploy** under real limits → **hand off** with docs the team can own.
