@@ -19,9 +19,9 @@ Open to Forward Deployed Engineer and senior AI engineering roles · Remote, USA
 Stage 3 of the same simulated hotel engagement. One evaluation system for both assistants below: one case schema, each project's own metrics, honest intervals and regression gates in both repos' CI, so a prompt, model or retrieval change can't lower quality without a red check.
 
 - **Caught a real regression:** a "send 2 passages instead of 5" change kept retrieval inside its confidence interval (98% → 93%), but the gate failed because q13 and q35 always passed and now always failed
-- **Judge calibrated honestly:** an LLM judge agreed with my 40 hand labels 95% of the time, but Cohen's kappa was **0.00** (my labels held no failures), so no judge score is trusted or gated
+- **Judge calibrated honestly:** an LLM judge agreed with my first 40 hand labels 95% of the time with Cohen's kappa **0.00** (no failures in them); a second blind round built to contain failures reached **0.29**, so no judge score is trusted or gated
 - **Reproduces published numbers:** the harness re-scores both projects' recordings to their exact published results, and fresh re-runs at pinned commits pass every gate
-- **Production habits:** 181 labelled cases, 86 tests, 93% coverage, every saved report re-scored in CI, 19 recorded decisions, **$0.38** total API spend
+- **Production habits:** 181 labelled cases, 87 tests, 93% coverage, every saved report re-scored in CI, 21 recorded decisions, **$0.41** total API spend
 
 [Live dashboard](https://eval-harness.streamlit.app) · [Demo video](https://vamsialla.com/projects/eval-harness.html#demo) · [Case study](https://vamsialla.com/projects/eval-harness.html) · [Code](https://github.com/vamsialladev/eval-harness)
 
