@@ -10,7 +10,18 @@ Open to Forward Deployed Engineer and senior AI engineering roles · Remote, USA
 
 ---
 
-#### 📏 New: [Eval Harness](https://github.com/vamsialladev/eval-harness)
+#### 🚀 New: [Production & Handoff](https://vamsialla.com/projects/production-and-handoff.html) (stages 4 and 5 of 5)
+
+Both live apps hardened for production and handed over with a [client handoff package](https://github.com/vamsialladev/hotel-ai-handoff). Simulated client engagement, synthetic data.
+
+- **Fixed what the evals found, measured before → after** (held-out cases written before each fix): assistant held-out answers **67% → 85%** (Spanish questions, emergencies; new cases 62% → 100%), agent wrong-hotel replies **0/6 → 6/6**; assistant answer accuracy 98% → **100%**
+- **Production basics:** Postgres request log with **personal data redacted before storage** and 30-day retention, staff role next to an open demo mode, kill switch, timeouts with retries, p95 and cost **budgets gated in CI**, owner Operations page, `docker compose up`
+- **Monitoring:** a daily GitHub Action that tells a sleeping free app from a broken one
+- **Handoff:** architecture, decision index, 8 runbooks, SLOs, staff and admin guides, readiness checklist, 30/60/90-day plan
+
+[Case study and video](https://vamsialla.com/projects/production-and-handoff.html) · [Handoff package](https://github.com/vamsialladev/hotel-ai-handoff)
+
+#### 📏 [Eval Harness](https://github.com/vamsialladev/eval-harness)
 
 <a href="https://vamsialla.com/projects/eval-harness.html#demo"><img src="https://raw.githubusercontent.com/vamsialladev/eval-harness/main/docs/images/demo.gif" alt="The live Eval Harness dashboard: the regression demo run filtered to failing cases, and question q13 drilled down to its expected passage, three refused answers and failed verdicts" width="640"></a>
 
@@ -21,7 +32,7 @@ Stage 3 of the same simulated hotel engagement. One evaluation system for both a
 - **Caught a real regression:** a "send 2 passages instead of 5" change kept retrieval inside its confidence interval (98% → 93%), but the gate failed because q13 and q35 always passed and now always failed
 - **Judge calibrated honestly:** an LLM judge agreed with my first 40 hand labels 95% of the time with Cohen's kappa **0.00** (no failures in them); a second blind round built to contain failures reached **0.29**, so no judge score is trusted or gated
 - **Reproduces published numbers:** the harness re-scores both projects' recordings to their exact published results, and fresh re-runs at pinned commits pass every gate
-- **Production habits:** 181 labelled cases, 87 tests, 93% coverage, every saved report re-scored in CI, 21 recorded decisions, **$0.41** total API spend
+- **Production habits:** 195 labelled cases (14 added in stage 4), 92 tests, 93% coverage, every saved report re-scored in CI, latency and cost budgets in the gate, 24 recorded decisions, **$0.41** API spend for stage 3
 
 [Live dashboard](https://eval-harness.streamlit.app) · [Demo video](https://vamsialla.com/projects/eval-harness.html#demo) · [Case study](https://vamsialla.com/projects/eval-harness.html) · [Code](https://github.com/vamsialladev/eval-harness)
 
@@ -33,10 +44,10 @@ Stage 3 of the same simulated hotel engagement. One evaluation system for both a
 
 Stage 2 of the same simulated hotel engagement, with synthetic guests and bookings. An agent reads a guest email, finds every request, checks the guest's own booking, free rooms and hotel policy (using stage 1's search as a tool), drafts a cited reply and proposes tasks. Staff approve, edit or reject every draft; refunds, upgrades and changes are only ever proposed to a manager.
 
-- **Gated in CI:** 100% escalation recall, 100% prompt-injection resistance and zero forbidden promises over 40 labelled emails × 3 runs, plus 100% on a held-out set; **$1.30 per 1,000 emails**, 8.4 s p95
+- **Gated in CI:** 100% escalation recall, 100% prompt-injection resistance and zero forbidden promises over 40 labelled emails × 3 runs, plus 100% on a held-out set; **$1.24 per 1,000 emails**, 8.3 s p95 (v1.1.0)
 - **Measured honestly:** eight gate failures were bugs in my own checks, each fixed with a regression test; the escalation rules missed both held-out escalations and the model caught them
 - **Built to be safe by construction:** tools can only read or propose, the booking lookup is scoped to the sender, every fact is checked against tool results
-- **Production habits:** 237 tests, 98% coverage, recorded eval runs re-scored in CI, owner admin page with a full request log, 17 recorded decisions
+- **Production habits:** 276 tests, 97% coverage, recorded eval runs re-scored in CI, owner admin and Operations pages, redacted persistent log, 23 recorded decisions
 
 [Live demo](https://guest-request-agent.streamlit.app) · [2-minute video](https://vamsialla.com/projects/guest-request-agent.html#demo) · [Case study](https://vamsialla.com/projects/guest-request-agent.html) · [Code](https://github.com/vamsialladev/guest-request-agent)
 
@@ -48,16 +59,16 @@ Stage 2 of the same simulated hotel engagement, with synthetic guests and bookin
 
 A simulated client engagement with synthetic hotel documents. Front-desk staff ask policy questions in plain English and get short, streamed answers with the source for every fact, for the right hotel. It refuses when the documents don't say, corrects wrong facts in the question, and points to a manager for refunds and safety.
 
-- **Measured, not guessed:** 54-question eval (prompt injection, must-refuse, wrong facts, off-topic, escalation), 3 runs: **97–98% answer accuracy**, full answer p95 about 2.5 s, **$0.17 per 1,000 questions**; the first question a visitor types gets a useful result **100%** of the time (43% before I tested it that way)
+- **Measured, not guessed:** 54-question eval (prompt injection, must-refuse, wrong facts, off-topic, escalation), 3 runs: **100% answer accuracy** on the live app's search in v1.6.0 (97–98% before), full answer p95 about 2.9 s, **$0.18 per 1,000 questions**; the first question a visitor types gets a useful result **100%** of the time (43% before I tested it that way)
 - **Debugged with evidence:** the eval caught my own grader passing a wrong answer; a "$75 fee" bug traced to a number in the question; model choice (Claude Haiku 5.5 over 4.5) made by measurement
 - **Product, not a notebook:** in-app guidance, curated follow-ups and "Did you mean" recovery, Insights for managers, a document library, light/dark mode, phone layout and public-demo protections
-- **Production habits:** 307 tests, 97% coverage, CI with a dependency audit and eval gates, Docker, threat model, 50 recorded decisions
+- **Production habits:** 378 tests, 97% coverage, CI with a dependency audit, eval gates and budgets, Docker compose with Postgres, threat model, 57 recorded decisions
 - **Business case:** projected value with pessimistic, base and optimistic scenarios (about $32K/yr base for 2 hotels), plus a pilot plan with go / no-go KPIs
 
 [Live demo](https://hotel-ops-assistant.streamlit.app) · [2-minute video](https://vamsialla.com/projects/hotel-ops-assistant.html#demo) · [Case study](https://vamsialla.com/projects/hotel-ops-assistant.html) · [Code](https://github.com/vamsialladev/hotel-ops-assistant)
 
-#### 🔨 In progress
-**Production Deployment** (stage 4 of 5): run history, monitoring, sign-in and personal-data redaction for the assistants.
+#### 🔨 Next
+All five stages are live. Next: outside testers for the held-out sets and a second labeler before any AI-judge score counts.
 
 #### 🧰 Tools I work with
 Python · Claude API (tool use) · Pydantic · RAG (BM25 + embeddings) · Evaluation (LLM-as-judge, Cohen's kappa, Wilson intervals) · Streamlit · pytest · Playwright · GitHub Actions · Docker
