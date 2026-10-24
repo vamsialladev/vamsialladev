@@ -10,7 +10,13 @@ Open to Forward Deployed Engineer and senior AI engineering roles · Remote, USA
 
 ---
 
-#### 🚀 New: [Production & Handoff](https://vamsialla.com/projects/production-and-handoff.html) (stages 4 and 5 of 5)
+#### 🆕 New: [Ops Analytics Agent](https://github.com/vamsialladev/hotel-ops-analytics-agent) (stage 8) and [MCP Tools + RBAC](https://github.com/vamsialladev/hotel-tools-mcp) (stage 7)
+
+- **Ops Analytics:** managers ask the bookings database in plain English and always see the SQL; a guard keeps it read-only and personal data manager-only. **98%** execution accuracy (dev, 3 runs; 95% held out), **100%** of unsafe requests refused, and a daily anomaly check that caught **5 of 5** planted anomalies on two synthetic years. [Case study](https://vamsialla.com/projects/hotel-ops-analytics-agent.html) · [Code](https://github.com/vamsialladev/hotel-ops-analytics-agent)
+- **MCP Tools + RBAC:** the hotel group's tools for Claude Desktop or Claude Code; the role decides which tools exist, other hotel groups' data looks like it isn't there, every call is in a hash-chained audit log. **99/99** labelled checks, **18/18** held out. [Case study](https://vamsialla.com/projects/hotel-tools-mcp.html) · [Code](https://github.com/vamsialladev/hotel-tools-mcp)
+- **Discovery & Scoping (stage 0):** the stakeholder sessions, four-check test, SOW and pricing that came before the code. [Case study](https://vamsialla.com/projects/hotel-ai-discovery.html) · [Pack](https://github.com/vamsialladev/hotel-ai-discovery)
+
+#### 🚀 [Production & Handoff](https://vamsialla.com/projects/production-and-handoff.html) (stages 4 and 5)
 
 Both live apps hardened for production and handed over with a [client handoff package](https://github.com/vamsialladev/hotel-ai-handoff). Simulated client engagement, synthetic data.
 
@@ -25,7 +31,7 @@ Both live apps hardened for production and handed over with a [client handoff pa
 
 <a href="https://vamsialla.com/projects/eval-harness.html#demo"><img src="https://raw.githubusercontent.com/vamsialladev/eval-harness/main/docs/images/demo.gif" alt="The live Eval Harness dashboard: the regression demo run filtered to failing cases, and question q13 drilled down to its expected passage, three refused answers and failed verdicts" width="640"></a>
 
-**[▶ Watch the demo (with narration)](https://vamsialla.com/projects/eval-harness.html#demo)** · **[Open the live dashboard](https://eval-harness.streamlit.app)** (read-only, no API calls)
+**[▶ Watch the demo](https://vamsialla.com/projects/eval-harness.html#demo)** · **[Open the live dashboard](https://eval-harness.streamlit.app)** (read-only, no API calls)
 
 Stage 3 of the same simulated hotel engagement. One evaluation system for both assistants below: one case schema, each project's own metrics, honest intervals and regression gates in both repos' CI, so a prompt, model or retrieval change can't lower quality without a red check.
 
@@ -40,7 +46,7 @@ Stage 3 of the same simulated hotel engagement. One evaluation system for both a
 
 <a href="https://vamsialla.com/projects/guest-request-agent.html#demo"><img src="https://vamsialla.com/assets/img/guest-agent-still.jpg" alt="The live Guest Request Agent's step timeline for a guest email: booking found, three hotel policies searched and cited, two staff tasks proposed, checks passed" width="640"></a>
 
-**[▶ Watch the 2-minute demo (with narration)](https://vamsialla.com/projects/guest-request-agent.html#demo)** · **[Try the live app](https://guest-request-agent.streamlit.app)** (no sign-in, nothing is ever sent)
+**[▶ Watch the 2-minute demo](https://vamsialla.com/projects/guest-request-agent.html#demo)** · **[Try the live app](https://guest-request-agent.streamlit.app)** (no sign-in, nothing is ever sent)
 
 Stage 2 of the same simulated hotel engagement, with synthetic guests and bookings. An agent reads a guest email, finds every request, checks the guest's own booking, free rooms and hotel policy (using stage 1's search as a tool), drafts a cited reply and proposes tasks. Staff approve, edit or reject every draft; refunds, upgrades and changes are only ever proposed to a manager.
 
@@ -55,7 +61,7 @@ Stage 2 of the same simulated hotel engagement, with synthetic guests and bookin
 
 <a href="https://vamsialla.com/projects/hotel-ops-assistant.html#demo"><img src="https://raw.githubusercontent.com/vamsialladev/hotel-ops-assistant/main/docs/images/demo.gif" alt="The live Hotel Operations Knowledge Assistant: a front-desk agent clicks a suggested question about dogs at Beach Resort and a cited answer streams in with its source" width="640"></a>
 
-**[▶ Watch the 2-minute demo (with narration)](https://vamsialla.com/projects/hotel-ops-assistant.html#demo)** · **[Try the live app](https://hotel-ops-assistant.streamlit.app)** (no sign-in)
+**[▶ Watch the 2-minute demo](https://vamsialla.com/projects/hotel-ops-assistant.html#demo)** · **[Try the live app](https://hotel-ops-assistant.streamlit.app)** (no sign-in)
 
 A simulated client engagement with synthetic hotel documents. Front-desk staff ask policy questions in plain English and get short, streamed answers with the source for every fact, for the right hotel. It refuses when the documents don't say, corrects wrong facts in the question, and points to a manager for refunds and safety.
 
@@ -68,7 +74,7 @@ A simulated client engagement with synthetic hotel documents. Front-desk staff a
 [Live demo](https://hotel-ops-assistant.streamlit.app) · [2-minute video](https://vamsialla.com/projects/hotel-ops-assistant.html#demo) · [Case study](https://vamsialla.com/projects/hotel-ops-assistant.html) · [Code](https://github.com/vamsialladev/hotel-ops-assistant)
 
 #### 🔨 Next
-All five stages are live. Next: outside testers for the held-out sets and a second labeler before any AI-judge score counts.
+Stages 0–5, 7 and 8 are published. Next: outside testers for the held-out sets and a second labeler before any AI-judge score counts.
 
 #### 🧰 Tools I work with
 Python · Claude API (tool use) · Pydantic · RAG (BM25 + embeddings) · Evaluation (LLM-as-judge, Cohen's kappa, Wilson intervals) · Streamlit · pytest · Playwright · GitHub Actions · Docker
